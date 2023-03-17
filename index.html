@@ -4,177 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            height: 100vh;
-            width: 100%;
-        }
-        .watch-container{
-            width: 100%;
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .watch-container p{
-            padding: 5px;
-            letter-spacing: 1px;
-            font-size: 72px;
-            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-        }
-        .watch-container p span{
-            box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
-        }
-        .clock-button{
-            cursor: pointer;
-            text-decoration: none;
-            border: none;
-            padding: 10px;
-            margin: 5px;
-            color: white;
-            border-radius: 5px;
-            min-width: 248px;
-            font-size: 20px;
-            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-        }
-        #start{
-            background-color: green;
-        }
-        #stop{
-            background-color: red;
-        }
-        #reset{
-            background-color: darkgrey;
-        }
-        #milisecond{
-            display: inline-block;
-            min-width: 60px;
-            text-align: center;
-            padding: 5px;
-            font-size: 42px;
-        }
-        .min-width{
-            display: inline-block;
-            min-width: 100px;
-            text-align: center;
-            font-size: 70px;
-            padding: 10px;
-        }
-        .stopwatch-buttons{
-            margin-top: 20px;
-        }
-    </style>
+    <title>Js Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-
-<div class="watch-container">
-    <p><span class="min-width" id="hour">00</span> : <span class="min-width" id="minute">00</span> : <span class="min-width" id="second">00</span>  <span id="milisecond">00</span></p>
-    <div class="stopwatch-buttons">
-        <button onclick="StartClock()" class="clock-button" id="start">Start</button>
-        <button onclick="StopClock()" class="clock-button" id="stop">Stop</button>
-        <button onclick="ResetClock()" class="clock-button" id="reset">Reset</button>
+    <div class="watch-container">
+        <p><span class="min-width" id="outputHour">00</span> : <span class="min-width" id="outputMinute">00</span> : <span class="min-width" id="outputSecond">00</span>  <span id="outputMilisecond">00</span></p>
+        <div class="stopwatch-buttons">
+            <button onclick="StartClock()" class="clock-button" id="startBtn">Start</button>
+            <button onclick="StopClock()" class="clock-button" id="stopBtn">Stop</button>
+            <button onclick="ResetClock()" class="clock-button" id="resetBtn">Reset</button>
+        </div>
     </div>
-</div>
 
-
-
-
-
-<script>
-    var currentHour = 0;
-    var currentMin = 0;
-    var currentSec = 0;
-    var currentmilisecond = 0;
-    var hour = document.getElementById("hour");
-    var minute = document.getElementById("minute");
-    var second = document.getElementById("second");
-    var milisecond = document.getElementById("milisecond");
-    var start = document.getElementById("start");
-    var Stop = document.getElementById("stop");
-    var stopWatch;
-
-    Stop.style.display = "none";
-    hour.innerHTML = "00";
-    minute.innerHTML = "00";
-    second.innerHTML = "00";
-    milisecond.innerHTML = "00";
-    
-    function StartClock()
-    {
-        start.style.display = "none";
-        Stop.style.display = "inline-block";
-        stopWatch = setInterval(myClock, 10);
-    }
-
-    function StopClock(){
-        start.style.display = "inline-block";
-        Stop.style.display = "none";
-        clearInterval(stopWatch);
-    }
-
-    function ResetClock(){
-        StopClock();
-        hour.innerHTML = "00";
-        minute.innerHTML = "00";
-        second.innerHTML = "00";
-        milisecond.innerHTML = "00";
-        currentHour = 0;
-        currentMin = 0;
-        currentSec = 0;
-    }
-        
-    
-    
-    function myClock()
-    {
-        currentmilisecond++;
-        if(currentmilisecond == 100)
-        {
-            currentmilisecond = 0;
-            currentSec++;
-            if(currentSec == 60)
-            {
-                currentSec = 0;
-                currentMin++;
-                if(currentMin == 60)
-                {
-                    currentMin = 0;
-                    currentHour++;
-                    if(currentHour == 24)
-                    {
-                        currentHour = 0;
-                    }
-                    hour.innerHTML = FormatTime(currentHour);
-                }
-                minute.innerHTML = FormatTime(currentMin);
-            }
-            second.innerHTML = FormatTime(currentSec);
-        }  
-        milisecond.innerHTML = FormatTime(currentmilisecond);
-    }
-    
-    function FormatTime(time)
-    {
-        var formatedTime
-        if(time < 10)
-        {
-            formatedTime = "0" + time.toString();
-        }
-        else
-        {
-            formatedTime = time;
-        }
-        return formatedTime
-    }
-</script>
-
+    <script src="main.js"></script>
 </body>
 </html>
