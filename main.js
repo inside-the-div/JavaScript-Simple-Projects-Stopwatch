@@ -1,20 +1,19 @@
 var currentHour = 0;
 var currentMin = 0;
 var currentSec = 0;
-var currentmilisecond = 0;
+var currentMilisec = 0;
 var outputHour = document.getElementById("outputHour");
 var outputMinute = document.getElementById("outputMinute");
-var outputSecond = document.getElementById("outputSecond");
-var outputMilisecond = document.getElementById("outputMilisecond");
+var outputSec = document.getElementById("outputSec");
+var outputMilisec = document.getElementById("outputMilisec");
 var startBtn = document.getElementById("startBtn");
 var stopBtn = document.getElementById("stopBtn");
 var stopWatch;
 
-stopBtn.style.display = "none";
 outputHour.innerHTML = "00";
 outputMinute.innerHTML = "00";
-outputSecond.innerHTML = "00";
-outputMilisecond.innerHTML = "00";
+outputSec.innerHTML = "00";
+outputMilisec.innerHTML = "00";
 
 function StartClock()
 {
@@ -33,8 +32,8 @@ function ResetClock(){
     StopClock();
     outputHour.innerHTML = "00";
     outputMinute.innerHTML = "00";
-    outputSecond.innerHTML = "00";
-    outputMilisecond.innerHTML = "00";
+    outputSec.innerHTML = "00";
+    outputMilisec.innerHTML = "00";
     currentHour = 0;
     currentMin = 0;
     currentSec = 0;
@@ -42,10 +41,10 @@ function ResetClock(){
 
 function myClock()
 {
-    currentmilisecond++;
-    if(currentmilisecond == 100)
+    currentMilisec++;
+    if(currentMilisec == 100)
     {
-        currentmilisecond = 0;
+        currentMilisec = 0;
         currentSec++;
         if(currentSec == 60)
         {
@@ -63,9 +62,9 @@ function myClock()
             }
             outputMinute.innerHTML = FormatTime(currentMin);
         }
-        outputSecond.innerHTML = FormatTime(currentSec);
+        outputSec.innerHTML = FormatTime(currentSec);
     }  
-    outputMilisecond.innerHTML = FormatTime(currentmilisecond);
+    outputMilisec.innerHTML = FormatTime(currentMilisec);
 }
 
 function FormatTime(time)
@@ -77,7 +76,7 @@ function FormatTime(time)
     }
     else
     {
-        formatedTime = time;
+        formatedTime = time.toString();
     }
     return formatedTime
 }

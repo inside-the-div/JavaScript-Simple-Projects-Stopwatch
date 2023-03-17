@@ -41,11 +41,12 @@ body{
 }
 #stopBtn{
     background-color: red;
+    display: none;
 }
 #resetBtn{
     background-color: darkgrey;
 }
-#outputMilisecond{
+#outputMilisec{
     display: inline-block;
     min-width: 60px;
     text-align: center;
@@ -63,7 +64,7 @@ body{
     margin-top: 20px;
 }
 .project-heading{
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 .project-heading h1{
     text-transform: capitalize;
