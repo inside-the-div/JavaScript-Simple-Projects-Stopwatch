@@ -62,3 +62,10 @@ body{
 .stopwatch-buttons{
     margin-top: 20px;
 }
+.project-heading{
+    margin-bottom: 20px;
+}
+.project-heading h1{
+    text-transform: capitalize;
+    font-size: 50px;
+}
