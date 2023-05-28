@@ -1,5 +1,5 @@
 <h1>JavaScript Simple Projects Beginners - Online Stopwatch Full Screen</h1>
-<p>JavaScript is a powerful language that's widely used for creating interactive web applications. If you're a beginner, it can be daunting to learn JavaScript, but there are many simple projects that you can start with to build your skills. One of these projects is creating an online stopwatch that displays in full screen.
+<p>Online Stopwatch Full Screen is a web application that functions as a stopwatch timer and takes up the entire screen of the user's device. It's a simple project that can be created using HTML, CSS, and JavaScript, and is ideal for beginners who want to learn the basics of web development.
 <a target="_blank" href="https://insidethediv.com/javascript-simple-projects-beginners-online-stopwatch-full-screen"><b>Read more</b></a>
 </p>
 
