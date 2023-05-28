@@ -10,10 +10,7 @@ var startBtn = document.getElementById("startBtn");
 var stopBtn = document.getElementById("stopBtn");
 var stopWatch;
 
-outputHour.innerHTML = "00";
-outputMinute.innerHTML = "00";
-outputSec.innerHTML = "00";
-outputMilisec.innerHTML = "00";
+
 
 function StartClock()
 {
